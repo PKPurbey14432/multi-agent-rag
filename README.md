@@ -33,7 +33,7 @@ The application uses a LangGraph state machine with the following components:
 1. **Clone the repository** (if applicable):
    ```bash
    git clone https://github.com/PKPurbey14432/multi-agent-rag.git
-   cd app
+   cd multi-agent-rag
    ```
 
 2. **Create a virtual environment**:
