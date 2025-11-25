@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  streamlit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: multi_agent_chatbot
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data:ro
+      - milvus_data:/app/milvus_data
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    networks:
+      - blend_network
+    restart: unless-stopped
+
+volumes:
+  milvus_data:
+    driver: local
+
+networks:
+  blend_network:
+    driver: bridge
