@@ -48,7 +48,7 @@ def load_csv_dataframes(folder: str):
                 print(f"Loaded: {df_name}  →  {df.shape[0]} rows")
 
             except Exception as e:
-                st.error(f"Failed to load {file_path}: {e}")
+                print(f"Failed to load {file_path}: {e}")
 
     return dataframes
 
@@ -93,7 +93,7 @@ class GreetingTool(BaseTool):
     def _run(self, query: str) -> str:
         import random
         return random.choice([
-            "Hello! 😊 How can I help you?",
+            "Hello! How can I help you?",
             "Hey there! What can I do for you?",
             "Hi! How may I assist you today?"
         ])
